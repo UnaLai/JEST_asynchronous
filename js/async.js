@@ -4,4 +4,14 @@ function fetchData(callbackFunction) {
   }, 1000);
 }
 
-module.exports =  {fetchData};
+function fetchDataReturnPromise() {
+  const promiseTest = new Promise(function(resolve, reject) {
+    setTimeout(function() {
+      // resolve('someData');
+      reject('something error');
+    }, 1000);
+  });
+  return promiseTest
+}
+
+module.exports =  {fetchData,fetchDataReturnPromise};
